@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Espacio_Seguro"
+        tools:targetApi="31">
+
+        <!--
+        Actividad Principal que se lanza al abrir la app.
+        Parece que tienes dos: MainActivity y LoginActivity.
+        Decide cuál es la correcta. Dejaré MainActivity por ahora.
+        -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Declaración de las otras actividades de la aplicación -->
+
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+
+        <!--
+        Si también tienes una LoginActivity, debe estar declarada,
+        pero usualmente no como LAUNCHER si MainActivity ya lo es.
+        -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /> <!-- Cambiado a false si no es la principal -->
+
+        <activity
+            android:name=".VerificarPlacaActivity"
+            android:exported="false" />
+
+        <!--
+        Y aquí está la actividad que faltaba, ahora en el lugar correcto.
+        -->
+        <activity
+            android:name=".RegistrarVehiculoActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
